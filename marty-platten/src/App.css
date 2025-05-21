@@ -4,3 +4,16 @@
   padding: 2rem;
   text-align: center;
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  width: 170px;
+  height: auto;
+}
