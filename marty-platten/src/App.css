@@ -1,19 +1,21 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
-.header {
+body {
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+#root {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.logo {
-  width: 170px;
-  height: auto;
+  text-align: center;
+  /* padding: 2rem; */ /* add later if wanted, creates a small padding around the page */
 }

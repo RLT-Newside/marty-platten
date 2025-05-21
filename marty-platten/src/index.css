@@ -14,11 +14,8 @@
 }
 
 body {
-  margin: 0;
   display: flex;
   place-items: center;
-  min-width: max-content;
-  min-height: max-content;
 }
 
 h1 {
