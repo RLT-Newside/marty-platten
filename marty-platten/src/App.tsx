@@ -1,10 +1,14 @@
-
-import logo from './assets/Logo_ohne Text.jpg'
+import logo from './assets/Logo.jpg'
 import './App.css'
 
 function App() {
   return(
     <>
+    <div className="app-container">
+      <header className="header">
+        <img src={logo} alt="Logo" className="logo" />
+      </header>
+    </div>
     <div>
       <h1>Marty Plattenbeläge</h1>
     </div>
