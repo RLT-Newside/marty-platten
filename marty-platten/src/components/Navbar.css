@@ -1,0 +1,10 @@
+.navbar-logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-right: 16px; /* equivalent to MUI's 'mr: 2' */
+}
+
+.navbar-logo {
+  height: 40px;
+}
