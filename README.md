@@ -59,7 +59,3 @@ Your local server will be available at [http://localhost:5173](http://localhost:
 ## 👤 Author
 
 Made with ❤️ by [Justin Marty](https://github.com/RLT-Newside)
-
-```
-
-```
