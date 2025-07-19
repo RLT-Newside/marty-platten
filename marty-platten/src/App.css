@@ -7,7 +7,7 @@ html, body, #root {
 }
 
 body {
-  background-color: #f9f9f9;
+  background-color: #cae1ff;
   font-family: Arial, sans-serif;
 }
 
@@ -17,5 +17,4 @@ body {
   align-items: center;
   justify-content: flex-start;
   text-align: center;
-  /* padding: 2rem; */ /* add later if wanted, creates a small padding around the page */
 }
