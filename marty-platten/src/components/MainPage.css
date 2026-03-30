@@ -1,21 +1,208 @@
-html, body, #root {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-
-.main-container {
-  width: 100%;
-  max-width: 1000px;
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #1a2332 0%, #2d3a4a 100%);
+  color: #ffffff;
+  padding: 80px 0 64px;
   text-align: center;
-  padding: 1rem;
-  box-sizing: border-box;
 }
 
-.main-container img {
+.hero-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 24px;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+}
+
+.hero-title {
+  font-weight: 700 !important;
+  font-size: clamp(2rem, 5vw, 3rem) !important;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px !important;
+}
+
+.hero-subtitle {
+  color: #94a3b8 !important;
+  font-weight: 400 !important;
+  font-size: clamp(1rem, 2.5vw, 1.25rem) !important;
+}
+
+/* Sections */
+.section {
+  padding: 80px 0;
+}
+
+.section-alt {
+  background-color: #f1f5f9;
+}
+
+.section-title {
+  font-weight: 700 !important;
+  text-align: center;
+  margin-bottom: 8px !important;
+  color: #1a2332;
+  letter-spacing: -0.01em;
+}
+
+.section-description {
+  text-align: center;
+  color: #64748b !important;
+  margin-bottom: 48px !important;
+}
+
+/* Carousel */
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.carousel-card {
   width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: block;
+  max-width: 960px;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 12px !important;
+  border: 1px solid #e2e8f0;
+}
+
+.carousel-arrow {
+  color: #475569 !important;
+  background-color: #f1f5f9 !important;
+  width: 48px;
+  height: 48px;
+  transition: background-color 0.2s ease !important;
+}
+
+.carousel-arrow:hover {
+  background-color: #e2e8f0 !important;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background-color: #2563eb;
+  transform: scale(1.2);
+}
+
+.carousel-dot:hover {
+  background-color: #94a3b8;
+}
+
+/* Services */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.service-card {
+  padding: 32px !important;
+  text-align: center;
+  border-radius: 12px !important;
+  border: 1px solid #e2e8f0 !important;
+  background-color: #ffffff !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06) !important;
+}
+
+.service-title {
+  font-weight: 600 !important;
+  margin-bottom: 8px !important;
+  color: #1a2332;
+}
+
+/* Contact */
+.contact-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 560px;
   margin: 0 auto;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 28px !important;
+  border-radius: 12px !important;
+  border: 1px solid #e2e8f0 !important;
+  background-color: #ffffff !important;
+  text-align: left;
+  transition: box-shadow 0.2s ease !important;
+}
+
+.contact-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+}
+
+.contact-link {
+  color: #1a2332;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: #2563eb;
+}
+
+/* Footer */
+.footer {
+  background-color: #1a2332;
+  color: #94a3b8;
+  text-align: center;
+  padding: 24px 0;
+  margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero-section {
+    padding: 56px 16px 48px;
+  }
+
+  .hero-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .section {
+    padding: 56px 16px;
+  }
+
+  .carousel-arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    padding: 20px !important;
+  }
 }

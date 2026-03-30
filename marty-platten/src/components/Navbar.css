@@ -2,9 +2,23 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  margin-right: 16px;
+  gap: 12px;
 }
 
 .navbar-logo {
-  height: 40px;
+  height: 44px;
+  border-radius: 6px;
+}
+
+.navbar-link {
+  color: #4a5568;
+  text-decoration: none;
+  font-size: 0.925rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.navbar-link:hover {
+  color: #1a2332;
 }
