@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 import logo from '../assets/LogoWithoutBackground.png';
 import image1 from '../assets/Screenshot 2024-11-03 183922.png';
@@ -12,6 +12,12 @@ import './MainPage.css'
 function MainPage() {
     const images = [image1, image2, image3];
     const [currentIndex, setCurrentIndex] = useState(0);
+
+    const email = useMemo(() => {
+        const user = ['marty', 'platten'].join('-');
+        const domain = ['bluewin', 'ch'].join('.');
+        return `${user}@${domain}`;
+    }, []);
 
     const handlePrev = () => {
         setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
@@ -151,7 +157,7 @@ function MainPage() {
                             <Box>
                                 <Typography variant="subtitle2" color="text.secondary">Email</Typography>
                                 <Typography variant="body1" fontWeight={500}>
-                                    <a href="mailto:marty-platten@bluewin.ch" className="contact-link">marty-platten@bluewin.ch</a>
+                                    <a href={`mailto:${email}`} className="contact-link">{email}</a>
                                 </Typography>
                             </Box>
                         </Paper>
