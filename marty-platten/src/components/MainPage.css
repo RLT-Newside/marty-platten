@@ -30,23 +30,25 @@
 /* Sections */
 .section {
   padding: 80px 0;
+  background-color: var(--color-bg);
+  transition: background-color 0.2s ease;
 }
 
 .section-alt {
-  background-color: #f1f5f9;
+  background-color: var(--color-bg-alt) !important;
 }
 
 .section-title {
   font-weight: 700 !important;
   text-align: center;
   margin-bottom: 8px !important;
-  color: #1a2332;
+  color: var(--color-text) !important;
   letter-spacing: -0.01em;
 }
 
 .section-description {
   text-align: center;
-  color: #64748b !important;
+  color: var(--color-text-muted) !important;
   margin-bottom: 48px !important;
 }
 
@@ -67,19 +69,19 @@
   justify-content: center;
   overflow: hidden;
   border-radius: 12px !important;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--color-border) !important;
 }
 
 .carousel-arrow {
-  color: #475569 !important;
-  background-color: #f1f5f9 !important;
+  color: var(--color-text-secondary) !important;
+  background-color: var(--color-carousel-arrow-bg) !important;
   width: 48px;
   height: 48px;
   transition: background-color 0.2s ease !important;
 }
 
 .carousel-arrow:hover {
-  background-color: #e2e8f0 !important;
+  background-color: var(--color-carousel-arrow-hover) !important;
 }
 
 .carousel-dots {
@@ -93,18 +95,18 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #cbd5e1;
+  background-color: var(--color-carousel-dot);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .carousel-dot.active {
-  background-color: #2563eb;
+  background-color: var(--color-accent);
   transform: scale(1.2);
 }
 
 .carousel-dot:hover {
-  background-color: #94a3b8;
+  background-color: var(--color-text-muted);
 }
 
 /* Services */
@@ -118,9 +120,9 @@
   padding: 32px !important;
   text-align: center;
   border-radius: 12px !important;
-  border: 1px solid #e2e8f0 !important;
-  background-color: #ffffff !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  border: 1px solid var(--color-border) !important;
+  background-color: var(--color-card-bg) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease !important;
 }
 
 .service-card:hover {
@@ -131,7 +133,7 @@
 .service-title {
   font-weight: 600 !important;
   margin-bottom: 8px !important;
-  color: #1a2332;
+  color: var(--color-text) !important;
 }
 
 /* Contact */
@@ -149,10 +151,10 @@
   gap: 20px;
   padding: 24px 28px !important;
   border-radius: 12px !important;
-  border: 1px solid #e2e8f0 !important;
-  background-color: #ffffff !important;
+  border: 1px solid var(--color-border) !important;
+  background-color: var(--color-card-bg) !important;
   text-align: left;
-  transition: box-shadow 0.2s ease !important;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease !important;
 }
 
 .contact-card:hover {
@@ -160,22 +162,28 @@
 }
 
 .contact-link {
-  color: #1a2332;
+  color: var(--color-text);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .contact-link:hover {
-  color: #2563eb;
+  color: var(--color-accent);
+}
+
+/* Contact text secondary override for dark mode */
+.contact-card .MuiTypography-root[class*="subtitle"] {
+  color: var(--color-text-muted) !important;
 }
 
 /* Footer */
 .footer {
-  background-color: #1a2332;
-  color: #94a3b8;
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-text);
   text-align: center;
   padding: 24px 0;
   margin-top: auto;
+  transition: background-color 0.2s ease;
 }
 
 /* Responsive */

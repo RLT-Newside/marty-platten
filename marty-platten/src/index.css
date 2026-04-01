@@ -1,13 +1,50 @@
 :root {
+  /* Light theme (default) */
+  --color-bg: #ffffff;
+  --color-bg-body: #f8fafb;
+  --color-bg-alt: #f1f5f9;
+  --color-text: #1a2332;
+  --color-text-muted: #64748b;
+  --color-text-secondary: #4a5568;
+  --color-border: #e2e8f0;
+  --color-border-light: #e0e4e8;
+  --color-accent: #2563eb;
+  --color-card-bg: #ffffff;
+  --color-carousel-arrow-bg: #f1f5f9;
+  --color-carousel-arrow-hover: #e2e8f0;
+  --color-carousel-dot: #cbd5e1;
+  --color-navbar-bg: #ffffff;
+  --color-footer-bg: #1a2332;
+  --color-footer-text: #94a3b8;
+
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   font-weight: 400;
-  color: #1a2332;
-  background-color: #ffffff;
+  color: var(--color-text);
+  background-color: var(--color-bg);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme="dark"] {
+  --color-bg: #0f172a;
+  --color-bg-body: #0f172a;
+  --color-bg-alt: #1e293b;
+  --color-text: #f1f5f9;
+  --color-text-muted: #94a3b8;
+  --color-text-secondary: #cbd5e1;
+  --color-border: #334155;
+  --color-border-light: #334155;
+  --color-accent: #3b82f6;
+  --color-card-bg: #1e293b;
+  --color-carousel-arrow-bg: #1e293b;
+  --color-carousel-arrow-hover: #334155;
+  --color-carousel-dot: #475569;
+  --color-navbar-bg: #0f172a;
+  --color-footer-bg: #020617;
+  --color-footer-text: #94a3b8;
 }
 
 * {
@@ -22,7 +59,8 @@ html, body, #root {
 }
 
 body {
-  background-color: #f8fafb;
+  background-color: var(--color-bg-body);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 #root {

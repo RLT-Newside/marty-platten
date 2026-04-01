@@ -11,7 +11,7 @@
 }
 
 .navbar-link {
-  color: #4a5568;
+  color: var(--color-text-secondary);
   text-decoration: none;
   font-size: 0.925rem;
   font-weight: 500;
@@ -20,5 +20,5 @@
 }
 
 .navbar-link:hover {
-  color: #1a2332;
+  color: var(--color-text);
 }

@@ -108,23 +108,23 @@ function MainPage() {
 
                     <Box className="services-grid">
                         <Paper elevation={0} className="service-card">
-                            <GridOn sx={{ fontSize: 40, color: '#2563eb', mb: 2 }} />
+                            <GridOn sx={{ fontSize: 40, color: 'var(--color-accent)', mb: 2 }} />
                             <Typography variant="h6" className="service-title">Plattenbeläge</Typography>
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography variant="body2" sx={{ color: 'var(--color-text-muted)' }}>
                                 Professionelle Verlegung von Fliesen und Platten für Böden und Wände in höchster Qualität.
                             </Typography>
                         </Paper>
                         <Paper elevation={0} className="service-card">
-                            <Build sx={{ fontSize: 40, color: '#2563eb', mb: 2 }} />
+                            <Build sx={{ fontSize: 40, color: 'var(--color-accent)', mb: 2 }} />
                             <Typography variant="h6" className="service-title">Sanierung</Typography>
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography variant="body2" sx={{ color: 'var(--color-text-muted)' }}>
                                 Fachgerechte Sanierung und Erneuerung bestehender Plattenbeläge und Untergründe.
                             </Typography>
                         </Paper>
                         <Paper elevation={0} className="service-card">
-                            <Handyman sx={{ fontSize: 40, color: '#2563eb', mb: 2 }} />
+                            <Handyman sx={{ fontSize: 40, color: 'var(--color-accent)', mb: 2 }} />
                             <Typography variant="h6" className="service-title">Beratung</Typography>
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography variant="body2" sx={{ color: 'var(--color-text-muted)' }}>
                                 Individuelle Beratung bei der Material- und Designwahl für Ihr Projekt.
                             </Typography>
                         </Paper>
@@ -144,28 +144,28 @@ function MainPage() {
 
                     <Box className="contact-grid">
                         <Paper elevation={0} className="contact-card">
-                            <Phone sx={{ fontSize: 32, color: '#2563eb' }} />
+                            <Phone sx={{ fontSize: 32, color: 'var(--color-accent)' }} />
                             <Box>
-                                <Typography variant="subtitle2" color="text.secondary">Telefon</Typography>
+                                <Typography variant="subtitle2" sx={{ color: 'var(--color-text-muted)' }}>Telefon</Typography>
                                 <Typography variant="body1" fontWeight={500}>
                                     <a href="tel:0566644436" className="contact-link">056 664 44 36</a>
                                 </Typography>
                             </Box>
                         </Paper>
                         <Paper elevation={0} className="contact-card">
-                            <Email sx={{ fontSize: 32, color: '#2563eb' }} />
+                            <Email sx={{ fontSize: 32, color: 'var(--color-accent)' }} />
                             <Box>
-                                <Typography variant="subtitle2" color="text.secondary">Email</Typography>
+                                <Typography variant="subtitle2" sx={{ color: 'var(--color-text-muted)' }}>Email</Typography>
                                 <Typography variant="body1" fontWeight={500}>
                                     <a href={`mailto:${email}`} className="contact-link">{email}</a>
                                 </Typography>
                             </Box>
                         </Paper>
                         <Paper elevation={0} className="contact-card">
-                            <LocationOn sx={{ fontSize: 32, color: '#2563eb' }} />
+                            <LocationOn sx={{ fontSize: 32, color: 'var(--color-accent)' }} />
                             <Box>
-                                <Typography variant="subtitle2" color="text.secondary">Adresse</Typography>
-                                <Typography variant="body1" fontWeight={500}>
+                                <Typography variant="subtitle2" sx={{ color: 'var(--color-text-muted)' }}>Adresse</Typography>
+                                <Typography variant="body1" fontWeight={500} sx={{ color: 'var(--color-text)' }}>
                                     Obere Büelhalde 9, 5634 Merenschwand
                                 </Typography>
                             </Box>
