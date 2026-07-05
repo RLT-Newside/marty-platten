@@ -11,6 +11,7 @@
 }
 
 .navbar-link {
+  position: relative;
   color: #4a5568;
   text-decoration: none;
   font-size: 0.925rem;
@@ -19,6 +20,24 @@
   cursor: pointer;
 }
 
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary, #2563eb);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
 .navbar-link:hover {
   color: #1a2332;
+}
+
+.navbar-link:hover::after,
+.navbar-link:focus-visible::after {
+  transform: scaleX(1);
 }

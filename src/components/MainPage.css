@@ -1,14 +1,33 @@
 /* Hero Section */
 .hero-section {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(135deg, #1a2332 0%, #2d3a4a 100%);
   color: #ffffff;
-  padding: 80px 0 64px;
+  padding: 96px 0 80px;
   text-align: center;
 }
 
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  width: 800px;
+  height: 800px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.25) 0%, rgba(37, 99, 235, 0) 70%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
 .hero-logo {
-  width: 120px;
-  height: 120px;
+  width: clamp(150px, 30vw, 200px);
+  height: auto;
   object-fit: contain;
   margin-bottom: 24px;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
@@ -19,12 +38,34 @@
   font-size: clamp(2rem, 5vw, 3rem) !important;
   letter-spacing: -0.02em;
   margin-bottom: 12px !important;
+  text-wrap: balance;
 }
 
 .hero-subtitle {
   color: #94a3b8 !important;
   font-weight: 400 !important;
   font-size: clamp(1rem, 2.5vw, 1.25rem) !important;
+  margin-bottom: 32px !important;
+}
+
+.hero-cta {
+  background-color: var(--color-primary, #2563eb) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  padding: 12px 32px !important;
+  border-radius: 999px !important;
+  font-size: 1rem !important;
+  transition: background-color 0.2s ease, transform 0.2s ease !important;
+}
+
+.hero-cta:hover {
+  background-color: var(--color-primary-dark, #1d4ed8) !important;
+  transform: translateY(-2px);
+}
+
+.hero-cta:active {
+  transform: translateY(0) scale(0.98);
 }
 
 /* Sections */
@@ -55,10 +96,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
 }
 
 .carousel-card {
+  position: relative;
   width: 100%;
   max-width: 960px;
   aspect-ratio: 16 / 9;
@@ -66,20 +107,73 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border-radius: 12px !important;
-  border: 1px solid #e2e8f0;
+  border-radius: var(--radius, 12px) !important;
+  border: 1px solid var(--color-border, #e2e8f0);
+  box-shadow: var(--shadow-md);
+}
+
+.carousel-image {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.03);
+  transition: opacity 0.6s ease, transform 6s ease;
+  pointer-events: none;
+}
+
+.carousel-image.active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.6s ease, transform 6s ease;
+}
+
+.carousel-counter {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background-color: rgba(15, 23, 42, 0.55);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(4px);
 }
 
 .carousel-arrow {
-  color: #475569 !important;
-  background-color: #f1f5f9 !important;
-  width: 48px;
-  height: 48px;
-  transition: background-color 0.2s ease !important;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #1a2332 !important;
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(4px);
+  width: 44px !important;
+  height: 44px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  z-index: 2;
+  transition: background-color 0.2s ease, transform 0.2s ease !important;
+}
+
+.carousel-arrow svg {
+  font-size: 20px;
+}
+
+.carousel-arrow-prev {
+  left: 16px !important;
+}
+
+.carousel-arrow-next {
+  right: 16px !important;
 }
 
 .carousel-arrow:hover {
-  background-color: #e2e8f0 !important;
+  background-color: #ffffff !important;
+  transform: translateY(-50%) scale(1.08) !important;
 }
 
 .carousel-dots {
@@ -92,54 +186,29 @@
 .carousel-dot {
   width: 10px;
   height: 10px;
-  border-radius: 50%;
+  border: none;
+  padding: 0;
+  border-radius: 999px;
   background-color: #cbd5e1;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: width 0.3s ease, background-color 0.3s ease;
 }
 
 .carousel-dot.active {
-  background-color: #2563eb;
-  transform: scale(1.2);
+  width: 28px;
+  background-color: var(--color-primary, #2563eb);
 }
 
 .carousel-dot:hover {
   background-color: #94a3b8;
 }
 
-/* Services */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-}
-
-.service-card {
-  padding: 32px !important;
-  text-align: center;
-  border-radius: 12px !important;
-  border: 1px solid #e2e8f0 !important;
-  background-color: #ffffff !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
-}
-
-.service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06) !important;
-}
-
-.service-title {
-  font-weight: 600 !important;
-  margin-bottom: 8px !important;
-  color: #1a2332;
-}
-
 /* Contact */
 .contact-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: 560px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -147,22 +216,33 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 24px 28px !important;
-  border-radius: 12px !important;
-  border: 1px solid #e2e8f0 !important;
+  padding: 28px !important;
+  border-radius: var(--radius, 12px) !important;
+  border: 1px solid var(--color-border, #e2e8f0) !important;
   background-color: #ffffff !important;
   text-align: left;
-  transition: box-shadow 0.2s ease !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
 }
 
 .contact-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md) !important;
 }
 
 .contact-link {
   color: #1a2332;
   text-decoration: none;
   transition: color 0.2s ease;
+}
+
+.contact-link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-weight: inherit;
+  text-align: inherit;
+  cursor: pointer;
 }
 
 .contact-link:hover {
@@ -184,25 +264,32 @@
     padding: 56px 16px 48px;
   }
 
-  .hero-logo {
-    width: 80px;
-    height: 80px;
-  }
-
   .section {
     padding: 56px 16px;
   }
 
   .carousel-arrow {
-    width: 36px;
-    height: 36px;
+    width: 36px !important;
+    height: 36px !important;
   }
 
-  .services-grid {
-    grid-template-columns: 1fr;
+  .carousel-arrow svg {
+    font-size: 16px;
+  }
+
+  .carousel-arrow-prev {
+    left: 8px !important;
+  }
+
+  .carousel-arrow-next {
+    right: 8px !important;
   }
 
   .contact-card {
+    padding: 20px !important;
+  }
+
+  .service-card {
     padding: 20px !important;
   }
 }

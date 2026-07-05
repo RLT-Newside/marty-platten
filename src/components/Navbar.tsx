@@ -6,9 +6,22 @@ import Typography from '@mui/material/Typography';
 import Logo from '../assets/Logo.jpg';
 import './Navbar.css'
 
+const navLinks = [
+  { label: 'Galerie', href: '#galerie' },
+  { label: 'Kontakt', href: '#kontakt' },
+];
+
 function ResponsiveAppBar() {
   return (
-    <AppBar position="sticky" elevation={0} sx={{ backgroundColor: '#ffffff', borderBottom: '1px solid #e0e4e8' }}>
+    <AppBar
+      position="sticky"
+      elevation={0}
+      sx={{
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        backdropFilter: 'blur(12px)',
+        borderBottom: '1px solid #e0e4e8',
+      }}
+    >
       <Container maxWidth="lg">
         <Toolbar disableGutters sx={{ minHeight: { xs: 64, md: 72 } }}>
           <Box component="a" href="#" className='navbar-logo-container'>
@@ -20,34 +33,24 @@ function ResponsiveAppBar() {
                 color: '#1a2332',
                 fontSize: { xs: '1rem', md: '1.15rem' },
                 letterSpacing: '-0.01em',
+                display: { xs: 'none', sm: 'block' },
               }}
             >
               Marty Plattenbeläge
             </Typography>
           </Box>
           <Box sx={{ flexGrow: 1 }} />
-          <Box component="nav" sx={{ display: 'flex', gap: 3 }}>
-            <Typography
-              component="a"
-              href="#galerie"
-              className="navbar-link"
-            >
-              Galerie
-            </Typography>
-            <Typography
-              component="a"
-              href="#leistungen"
-              className="navbar-link"
-            >
-              Leistungen
-            </Typography>
-            <Typography
-              component="a"
-              href="#kontakt"
-              className="navbar-link"
-            >
-              Kontakt
-            </Typography>
+          <Box component="nav" sx={{ display: 'flex', gap: { xs: 2.5, md: 3 } }}>
+            {navLinks.map((link) => (
+              <Typography
+                key={link.href}
+                component="a"
+                href={link.href}
+                className="navbar-link"
+              >
+                {link.label}
+              </Typography>
+            ))}
           </Box>
         </Toolbar>
       </Container>
